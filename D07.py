@@ -7,6 +7,7 @@ array1 = np.array([[10, 8], [3, 5]])
 # ans: 是單位矩陣
 array1_inv = np.linalg.inv(array1);
 array2 = array1@array1_inv
+
 if np.array_equal(array2, np.array([[1, 0], [0, 1]])):
     print("是單位矩陣")
 else:
