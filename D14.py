@@ -9,6 +9,6 @@ score_df = pd.DataFrame(
     columns=['student_id', 'math_score', 'english_score', 'chinese_score', 'sex', 'class'])
 
 # 將索引(index)依序改為sex、class、student_id，欄位依序改成chinese_score、english_score、math_score
-print(score_df.stack())
-
-# print(score_df.pivot(index=['sex', 'class', 'student_id'], columns=['chinese_score'], values=['english_score', 'math_score']))
+df = score_df.melt(id_vars=['sex', 'class', 'student_id'])
+df = df.set_index(['sex', 'class', 'student_id']).pivot(columns='variable')
+print(df)
