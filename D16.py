@@ -7,4 +7,4 @@ print(series)
 # 1. 將所有轉為周資料
 print(series.to_period(freq="W"))
 # 2. 將周資料的值取平均
-print(series.to_period(freq="W").mean())
+print(series.resample('W').mean())
